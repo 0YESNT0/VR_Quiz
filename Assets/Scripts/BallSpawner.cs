@@ -6,14 +6,16 @@ public class BallSpawner : MonoBehaviour
 {
     [SerializeField]private string prefabName;
     [SerializeField]private Transform parent;
-    private void OnEnable()
+    private void Start()
     {
-        BallScript.onBallGrab.AddListener(SpawnBall);
+        Debug.Log("Enabled SPawner");        
         SpawnBall();
+        BallScript.onBallGrab += SpawnBall;
     }
 
     private void SpawnBall(){
-        GameObject ball = ObjectPoolManager.Instance.GetPooledObject(prefabName);
-        ball.SetActive(true);
+        GameObject ball = ObjectPoolManager.Instance.Instantiate(prefabName,parent.position,parent.rotation);
+        Debug.Log("SPawned");
+        ball.gameObject.SetActive(true);
     }
 }

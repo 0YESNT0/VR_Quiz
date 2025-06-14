@@ -70,4 +70,19 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
             obj.SetActive(false);
         }
     }
+
+    public void Destroy(GameObject gameObject)
+    {
+        ObjectPoolManager.Instance.ReturnObjectToPool(gameObject);
+    }
+
+    public GameObject Instantiate(string prefabId, Vector3 position, Quaternion rotation)
+    {
+        GameObject pooledObject = ObjectPoolManager.Instance.GetPooledObject(prefabId);
+        if (pooledObject != null)
+        {
+            pooledObject.transform.SetPositionAndRotation(position, rotation);
+        }
+        return pooledObject;
+    }
 }

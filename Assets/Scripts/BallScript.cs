@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
+using System;
 
 public class BallScript : MonoBehaviour
 {
     [SerializeField]private bool hasBeenGrabbed = false;
     [SerializeField]private float RespawnDelay = 5;
     [SerializeField]private float currentDelayCountdown;
-    public static UnityEvent onBallGrab;
+    public static Action onBallGrab;
 
     private XRGrabInteractable xrGrab;
     void OnEnable()

@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1670968f24c17ac47ae27e168f8deba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPersist: 0
+  isPersist: 1
   itemsToPool:
   - id: Balls
     objectToPool: {fileID: 387857069822942707, guid: da862cf1482a02e42805135c5a0f3679,
@@ -1054,7 +1054,7 @@ Transform:
   m_GameObject: {fileID: 418660555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0429934, y: 0.06173968, z: 1.5449833}
+  m_LocalPosition: {x: -0.009, y: 0.06173968, z: 5.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
